@@ -1,27 +1,34 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Products from './pages/Products'
+import ProductDetail from './pages/ProductDetail'
+import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
+import { CartProvider } from './context/CartContext'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen flex items-center justify-center">
-      <div className="text-center">
-        <h1 className="text-5xl font-bold mb-8 text-[#C9A24B]">ZAYRON</h1>
-        <p className="text-xl mb-8 text-[#F6F1E4]">Luxury, Sylhet</p>
-        <p className="text-lg text-gray-300 mb-12">Modest luxury clothing, footwear, fragrance and accessories</p>
-        
-        <div className="bg-[#1A2B1F] p-8 rounded-lg border border-[#C9A24B]">
-          <p className="text-[#F6F1E4] mb-6">Count: {count}</p>
-          <button
-            onClick={() => setCount((count) => count + 1)}
-            className="px-6 py-3 bg-[#C9A24B] text-[#0B1613] font-semibold rounded hover:bg-[#D4B566] transition"
-          >
-            Increment
-          </button>
+    <CartProvider>
+      <Router>
+        <div className="flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-grow">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:slug" element={<ProductDetail />} />
+              <Route path="/cart" element={<Cart />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+          </main>
+          <Footer />
         </div>
-      </div>
-    </div>
+      </Router>
+    </CartProvider>
   )
 }
 
