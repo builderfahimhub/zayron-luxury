@@ -1,0 +1,6 @@
+{
+  "name": "ZAYRON — Luxury, Sylhet",
+  "description": "Modest luxury clothing, footwear, fragrance and accessories tailored in Sylhet, Bangladesh.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

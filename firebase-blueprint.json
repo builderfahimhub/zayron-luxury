@@ -1,0 +1,74 @@
+{
+  "entities": {
+    "products": {
+      "collection": "products",
+      "fields": {
+        "slug": { "type": "string", "required": true },
+        "name": { "type": "string", "required": true },
+        "category": { "type": "string", "required": true },
+        "price": { "type": "number", "required": true },
+        "oldPrice": { "type": "number" },
+        "stock": { "type": "number" },
+        "desc": { "type": "string" },
+        "longDesc": { "type": "string" },
+        "badge": { "type": "string" },
+        "image": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      }
+    },
+    "partner_companies": {
+      "collection": "partner_companies",
+      "fields": {
+        "id": { "type": "string", "required": true },
+        "name": { "type": "string", "required": true },
+        "specialty": { "type": "string" },
+        "description": { "type": "string" },
+        "location": { "type": "string" },
+        "badge": { "type": "string" },
+        "website": { "type": "string" },
+        "createdAt": { "type": "string" }
+      }
+    },
+    "partner_products": {
+      "collection": "partner_products",
+      "fields": {
+        "slug": { "type": "string", "required": true },
+        "partnerCompanyId": { "type": "string", "required": true },
+        "companyName": { "type": "string", "required": true },
+        "name": { "type": "string", "required": true },
+        "category": { "type": "string", "required": true },
+        "price": { "type": "number", "required": true },
+        "oldPrice": { "type": "number" },
+        "stock": { "type": "number" },
+        "desc": { "type": "string" },
+        "longDesc": { "type": "string" },
+        "badge": { "type": "string" },
+        "image": { "type": "string" }
+      }
+    },
+    "orders": {
+      "collection": "orders",
+      "fields": {
+        "tracker": { "type": "string", "required": true },
+        "name": { "type": "string", "required": true },
+        "phone": { "type": "string", "required": true },
+        "address": { "type": "string", "required": true },
+        "deliveryZone": { "type": "string" },
+        "deliveryCharge": { "type": "number" },
+        "payMethod": { "type": "string" },
+        "trx": { "type": "string" },
+        "items": { "type": "array" },
+        "subtotal": { "type": "number" },
+        "total": { "type": "number" },
+        "date": { "type": "string" },
+        "status": { "type": "string" }
+      }
+    },
+    "settings": {
+      "collection": "settings",
+      "fields": {
+        "id": { "type": "string", "required": true }
+      }
+    }
+  }
+}
